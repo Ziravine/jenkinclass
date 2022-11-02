@@ -12,5 +12,10 @@ pipeline {
                     credentialsId: '404b6af5-bc30-4b8d-84f0-5912457ec47c'
             }
         }
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
     }
 }
